@@ -1,0 +1,51 @@
+
+
+.color {
+    background:none;
+}
+.modalSize {
+    background:none;
+}
+
+.modalText {
+    margin-left: 0px;
+    /* text-overflow: clip; */
+    /* float: right; */
+
+}
+.modalText2 {
+    margin-left: 18px;
+    padding-top: 20px;
+}
+.sideDist {
+    margin-left: 10px;
+
+}
+
+
+.contained-modal-title-vcenter {
+    margin-left: 20px;
+}
+.marginGenre {
+    margin-left: 2px;
+    margin-right: 20px;
+}
+
+/* .padding-0{
+    padding-right:0 !important;
+    padding-left:0 !important;
+} */
+/* @media only screen and (min-width: 1024px){ .container-75 {
+    width: 820px !important;
+    height: 70px !important;
+    
+} */
+.modalColor{
+    margin-top: 10px;   
+}
+/* } */
+
+/* .dim {
+    height: 200px;
+    width: 180px;
+} */

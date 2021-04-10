@@ -1,0 +1,59 @@
+
+[
+    {
+        "id": 1,
+        "name": "Alec Baldwin",
+        "type":"Actor",
+        "movies": [
+            "Beetlejuice",
+            "Lamborgini"
+        ],
+        "description": "Alec Baldwin is the oldest, and best-known, of the four Baldwin brothers in the acting business (the others are Stephen Baldwin, William Baldwin and Daniel Baldwin). Alexander Rae Baldwin III was born on April 3, 1958 in Massapequa, New York, the son of Carol Newcomb (Martineau) and Alexander Rae Baldwin Jr., a high school teacher and football coach at Massapequa High School. He is of Irish, English, French, Scottish, and German descent.",
+        "image": "https://m.media-amazon.com/images/M/MV5BMjE1Njg4MzY3M15BMl5BanBnXkFtZTcwNTY3MjE3NA@@._V1_.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Geena Davis",
+        "type":"Actor",
+        "movies": [
+            "Beetlejuice",
+            "Lamborgini"
+        ],
+        "description": "Alec Baldwin is the oldest, and best-known, of the four Baldwin brothers in the acting business (the others are Stephen Baldwin, William Baldwin and Daniel Baldwin). Alexander Rae Baldwin III was born on April 3, 1958 in Massapequa, New York, the son of Carol Newcomb (Martineau) and Alexander Rae Baldwin Jr., a high school teacher and football coach at Massapequa High School. He is of Irish, English, French, Scottish, and German descent.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Geena_Davis_2013_%28cropped%29.jpg/1200px-Geena_Davis_2013_%28cropped%29.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Annie McEnroe",
+        "type":"Actor",
+        "movies": [
+            "Beetlejuice",
+            "Lamborgini"
+        ],
+        "description": "Alec Baldwin is the oldest, and best-known, of the four Baldwin brothers in the acting business (the others are Stephen Baldwin, William Baldwin and Daniel Baldwin). Alexander Rae Baldwin III was born on April 3, 1958 in Massapequa, New York, the son of Carol Newcomb (Martineau) and Alexander Rae Baldwin Jr., a high school teacher and football coach at Massapequa High School. He is of Irish, English, French, Scottish, and German descent.",
+        "image": "https://upload.wikimedia.org/wikipedia/en/thumb/7/76/Beetlejuice_%281988_film_poster%29.png/220px-Beetlejuice_%281988_film_poster%29.png"
+    },
+    {
+        "id": 4,
+        "name": "Maurice Page",
+        "type":"Actor",
+        "movies": [
+            "Beetlejuice",
+            "Lamborgini"
+        ],
+        "description": "Alec Baldwin is the oldest, and best-known, of the four Baldwin brothers in the acting business (the others are Stephen Baldwin, William Baldwin and Daniel Baldwin). Alexander Rae Baldwin III was born on April 3, 1958 in Massapequa, New York, the son of Carol Newcomb (Martineau) and Alexander Rae Baldwin Jr., a high school teacher and football coach at Massapequa High School. He is of Irish, English, French, Scottish, and German descent.",
+        "image": "https://upload.wikimedia.org/wikipedia/en/thumb/7/76/Beetlejuice_%281988_film_poster%29.png/220px-Beetlejuice_%281988_film_poster%29.png"
+    },
+        {
+        "id": 5,
+        "name": "Tim Burton",
+        "type":"Director",
+        "movies": [
+            "Beetlejuice",
+            "Lamborgini"
+        ],
+        "description": "Alec Baldwin is the oldest, and best-known, of the four Baldwin brothers in the acting business (the others are Stephen Baldwin, William Baldwin and Daniel Baldwin). Alexander Rae Baldwin III was born on April 3, 1958 in Massapequa, New York, the son of Carol Newcomb (Martineau) and Alexander Rae Baldwin Jr., a high school teacher and football coach at Massapequa High School. He is of Irish, English, French, Scottish, and German descent.",
+        "image": "https://m.media-amazon.com/images/M/MV5BMjE1Njg4MzY3M15BMl5BanBnXkFtZTcwNTY3MjE3NA@@._V1_.jpg"
+    }
+
+]

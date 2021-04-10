@@ -1,0 +1,104 @@
+[
+    {
+        "id": 1,
+        "title": "Beetlejuice",
+        "year": "1988",
+        "runtime": "92",
+        "rating": 4.6,
+        "trailer" : "https://www.youtube.com/watch?v=ickbVzajrk0",
+        "genres": [
+            "Comedy",
+            "Fantasy"
+        ],
+        "director": 5,
+        "actors": [1,2,3,4],
+        "plot": "A couple of recently deceased ghosts contract the services of a \"bio-exorcist\" in order to remove the obnoxious new owners of their house.",
+        "posterUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/7/76/Beetlejuice_%281988_film_poster%29.png/220px-Beetlejuice_%281988_film_poster%29.png",
+        "stillUrl": "https://www.gannett-cdn.com/presto/2019/04/01/USAT/9198529e-5d15-49d7-9c32-90d5bf4a481e-XXX_zx18935.JPG",
+        "images":["https://m.media-amazon.com/images/M/MV5BMTIxOGE3OTUtMzc5My00YTg3LTkzNzgtYmM1MWY3OTk1OTBjXkEyXkFqcGdeQXVyNzU1NzE3NTg@._V1_CR0,45,480,270_AL_UX477_CR0,0,477,268_AL_.jpg",
+            "https://m.media-amazon.com/images/M/MV5BODI3ZTI3MTktMjM5ZS00M2JkLTgxNmQtYjdiN2JkNzA0MjdmXkEyXkFqcGdeQXVyNzc5NjM0NA@@._V1_.jpg"]
+    },
+    {
+        "id": 2,
+        "title": "The Cotton Club",
+        "year": "1984",
+        "runtime": "127",
+        "rating": 4.9,
+         "trailer" : "https://www.youtube.com/watch?v=ickbVzajrk0",
+        "genres": [
+            "Crime",
+            "Drama",
+            "Music"
+        ],
+        "director": 5,
+        "actors":[1,2,3,4],
+        "plot": "The Cotton Club was a famous night club in Harlem. The story follows the people that visited the club, those that ran it, and is peppered with the Jazz music that made it so famous.",
+        "posterUrl": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTU5ODAyNzA4OV5BMl5BanBnXkFtZTcwNzYwNTIzNA@@._V1_SX300.jpg",
+        "stillUrl": "https://api.time.com/wp-content/uploads/2016/05/beetlejuice-lead.jpg",
+        "images":["https://m.media-amazon.com/images/M/MV5BMTIxOGE3OTUtMzc5My00YTg3LTkzNzgtYmM1MWY3OTk1OTBjXkEyXkFqcGdeQXVyNzU1NzE3NTg@._V1_CR0,45,480,270_AL_UX477_CR0,0,477,268_AL_.jpg",
+            "https://m.media-amazon.com/images/M/MV5BODI3ZTI3MTktMjM5ZS00M2JkLTgxNmQtYjdiN2JkNzA0MjdmXkEyXkFqcGdeQXVyNzc5NjM0NA@@._V1_.jpg"]        
+
+    },
+    {
+        "id": 3,
+        "title": "The Shawshank Redemption",
+        "year": "1994",
+        "runtime": "142",
+        "rating": 5.0,
+         "trailer" : "https://www.youtube.com/watch?v=ickbVzajrk0",
+        "genres": [
+            "Crime",
+            "Drama"
+        ],
+        "director": 5,
+        "actors": [1,2,3,4],
+
+        "plot": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+        "posterUrl": "https://images-na.ssl-images-amazon.com/images/M/MV5BODU4MjU4NjIwNl5BMl5BanBnXkFtZTgwMDU2MjEyMDE@._V1_SX300.jpg",
+        "stillUrl": "https://api.time.com/wp-content/uploads/2016/05/beetlejuice-lead.jpg",
+        "images":["https://m.media-amazon.com/images/M/MV5BMTIxOGE3OTUtMzc5My00YTg3LTkzNzgtYmM1MWY3OTk1OTBjXkEyXkFqcGdeQXVyNzU1NzE3NTg@._V1_CR0,45,480,270_AL_UX477_CR0,0,477,268_AL_.jpg",
+            "https://m.media-amazon.com/images/M/MV5BODI3ZTI3MTktMjM5ZS00M2JkLTgxNmQtYjdiN2JkNzA0MjdmXkEyXkFqcGdeQXVyNzc5NjM0NA@@._V1_.jpg"]
+    },
+    {
+        "id": 4,
+        "title": "Crocodile Dundee",
+        "year": "1986",
+        "runtime": "97",
+        "rating": 4.4,
+         "trailer" : "https://www.youtube.com/watch?v=ickbVzajrk0",
+        "genres": [
+            "Adventure",
+            "Comedy"
+        ],
+        "director": 5,
+        "actors": [1,2,3,4],
+
+        "plot": "An American reporter goes to the Australian outback to meet an eccentric crocodile poacher and invites him to New York City.",
+        "posterUrl": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTg0MTU1MTg4NF5BMl5BanBnXkFtZTgwMDgzNzYxMTE@._V1_SX300.jpg",
+        "stillUrl": "https://api.time.com/wp-content/uploads/2016/05/beetlejuice-lead.jpg",
+        "images":["https://m.media-amazon.com/images/M/MV5BMTIxOGE3OTUtMzc5My00YTg3LTkzNzgtYmM1MWY3OTk1OTBjXkEyXkFqcGdeQXVyNzU1NzE3NTg@._V1_CR0,45,480,270_AL_UX477_CR0,0,477,268_AL_.jpg",
+            "https://m.media-amazon.com/images/M/MV5BODI3ZTI3MTktMjM5ZS00M2JkLTgxNmQtYjdiN2JkNzA0MjdmXkEyXkFqcGdeQXVyNzc5NjM0NA@@._V1_.jpg"]
+    },
+    {
+        "id": 5,
+        "title": "Valkyrie",
+        "year": "2008",
+        "runtime": "121",
+        "rating": 4.6,
+         "trailer" : "https://www.youtube.com/watch?v=ickbVzajrk0",
+        "genres": [
+            "Drama",
+            "History",
+            "Thriller"
+        ],
+
+        "director": 5,
+        "actors": [1,2,3,4],
+
+        "plot": "A dramatization of the 20 July assassination and political coup plot by desperate renegade German Army officers against Hitler during World War II.",
+        "posterUrl": "http://ia.media-imdb.com/images/M/MV5BMTg3Njc2ODEyN15BMl5BanBnXkFtZTcwNTAwMzc3NA@@._V1_SX300.jpg",
+        "stillUrl": "https://api.time.com/wp-content/uploads/2016/05/beetlejuice-lead.jpg",
+        "images":["https://m.media-amazon.com/images/M/MV5BMTIxOGE3OTUtMzc5My00YTg3LTkzNzgtYmM1MWY3OTk1OTBjXkEyXkFqcGdeQXVyNzU1NzE3NTg@._V1_CR0,45,480,270_AL_UX477_CR0,0,477,268_AL_.jpg",
+            "https://m.media-amazon.com/images/M/MV5BODI3ZTI3MTktMjM5ZS00M2JkLTgxNmQtYjdiN2JkNzA0MjdmXkEyXkFqcGdeQXVyNzc5NjM0NA@@._V1_.jpg"]
+    }
+]

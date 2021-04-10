@@ -1,0 +1,99 @@
+/* *{font-family: Roboto} */
+.box2 {
+    margin-top: 6px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: none;
+}
+
+
+.grid2 {
+    min-height: 50%;
+    max-height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+   
+}
+.Card.Img {
+    height: 20px;
+    width: 15px;
+}
+
+.grid2 > div {
+    flex-basis: calc(20% - 60px);
+}
+.heading {
+    padding-left: 112px;
+    
+}
+.text-color {
+    color: white;
+    font-family: Roboto;
+    
+}
+
+.color {
+    background-color: #4D2F28;
+}
+.modalSize {
+    background-color:#4D2F28;
+}
+
+.modalText {
+    margin-left: 70px;
+}
+.modalText2 {
+    margin-left: 18px;
+}
+.sideDist {
+    margin-left: 10px;
+}
+.contained-modal-title-vcenter {
+    margin-left: 20px;
+}
+.marginGenre {
+    margin-left: 2px;
+    margin-right: 20px;
+}
+.padding-0{
+    padding-right:0 !important;
+    padding-left:0 !important;
+}
+.siz {
+    size: 20px;
+}
+.addedbutton2 {
+    background-color:#321e1a;
+    border:none;
+    position:absolute;
+    font-size: 12px;
+    max-width: 150px;
+    bottom: 0;
+    left: 21px;
+    right: 2px;
+    /* right: 0; */
+    /* margin-right: 2px; */
+    /* margin-bottom: 20px; */
+    }
+/* @media only screen and (min-width: 1024px){ .container-75 {
+    width: 820px !important;
+    height: 50px !important;
+    padding-top: 0px;
+}} */
+
+.addedbutton2:hover {
+    /* background-color:#432923;
+border-color:#432923; */
+background-color:#321e1a;
+border:none;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.addedbutton2:focus {
+    background-color:#221411;
+border:none;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+

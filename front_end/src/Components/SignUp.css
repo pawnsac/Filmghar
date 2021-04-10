@@ -1,0 +1,25 @@
+*{
+    box-sizing: border-box;
+    margin-left: 0;
+    padding: 0;
+    font-family: 'PT Sans', sans-serif;
+
+  }
+  .scrollNo {
+    overflow-x: hidden;
+  }
+  @media only screen and (max-width: 900px) {
+    .heading {
+      color: white;
+      margin-right: 20%;
+    }
+  }
+  .heading {
+    color: white;
+    margin-right: 10%;
+    font-family: "Roboto";
+  /* font-weight: 400; */
+  }
+  .marginb {
+    margin-bottom: 0px;
+  }

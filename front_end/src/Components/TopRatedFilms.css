@@ -1,0 +1,157 @@
+/* *{font-family: Roboto} */
+.box2 {
+    margin-top: 6px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: none;
+}
+
+
+.addedbutton {
+
+background-color: #3A2622;
+border-color: #3A2622;
+position:absolute;
+
+
+bottom: 0;
+margin-bottom: 20px;
+
+
+}
+.addedbutton:hover {
+    background-color: #4D2F28;
+border-color: #4D2F28;
+}
+.addedbutton:focus {
+    background-color: #4D2F28;
+border-color: #4D2F28;
+}
+
+
+.customlist-container{
+/*padding: 10px;
+    width: 100%;*/
+ /*     display: flex;
+      flex-direction: row;*/
+
+         margin-top: 6px;
+    margin-bottom: 30px;
+    margin-left: 100px;
+    margin-right: 100px;
+      justify-content: center;
+      height: 500px;
+}
+.custom-images-cont{
+    opacity: 0.5;
+
+    margin-top: 40px;
+
+    /*justify-content: center;*/
+  display: flex;
+        flex-direction: row;
+        flex-basis: calc(50% - 10px);   
+}
+.customlist-text{
+    text-align: center;
+   
+}
+.customlist-href{
+
+           display: flex;
+        flex-direction: row;
+        flex-basis: calc(50% - 10px);
+
+   /* flex: 1;*/
+}
+.customlist-box{
+justify-content: center;
+    margin-top: 6px;
+    margin-bottom: 30px;
+    margin-left: 50px;
+    margin-right: 20px;
+     /* display: flex;/*
+        flex-direction: row;
+    flex: 1;*/
+     /*flex-wrap: wrap;*/
+   /* width: 50%;*/
+}
+.grid2-customlist {
+   /* min-height: 50%;
+    max-height: 80%;*/
+   /*  flex-basis: calc(50% - 10px);*/
+    /* width: 100%;*/
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex: 1;
+    justify-content: center;
+
+   
+}
+
+.grid2 {
+    min-height: 50%;
+    max-height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+   
+}
+.Card.Img {
+    height: 20px;
+    width: 15px;
+}
+
+.grid2 > div {
+    flex-basis: calc(20% - 60px);
+}
+.heading {
+    padding-left: 112px;
+    
+}
+.text-color {
+    color: white;
+    font-family: Roboto;
+    font-size: 19px;
+
+    
+}
+
+.color {
+    background-color: #4D2F28;
+}
+.modalSize {
+    background-color:#4D2F28;
+}
+
+.modalText {
+    margin-left: 70px;
+}
+.modalText2 {
+    margin-left: 18px;
+}
+.sideDist {
+    margin-left: 10px;
+}
+.contained-modal-title-vcenter {
+    margin-left: 20px;
+}
+.marginGenre {
+    margin-left: 2px;
+    margin-right: 20px;
+}
+.padding-0{
+    padding-right:0 !important;
+    padding-left:0 !important;
+}
+.siz {
+    size: 20px;
+}
+@media only screen and (min-width: 1024px){ .container-75 {
+    width: 820px !important;
+    height: 50px !important;
+    padding-top: 0px;
+}}
+
