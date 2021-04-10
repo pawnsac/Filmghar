@@ -29,5 +29,16 @@ class FeatFilmView(generics.ListAPIView):
 	serializer_class=FilmsSerializer
 	
 class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+	queryset = User.objects.all()
+	serializer_class = UserSerializer
+# class PermissionView(APIView):
+# 	permission_classes = [IsAuthenticated]
+# 	authentication_classes = [BasicAuthentication,JSONWebTokenAuthentication]
+
+# 	def get(self, request,format=None):
+# 		data = {
+# 			'username': request.user.username,
+# 			'id':request.user.id
+# 		}
+# 		return Response(data)
+

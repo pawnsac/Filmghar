@@ -1,0 +1,1 @@
+web: gunicorn filmghar.wsgi --log-file--
