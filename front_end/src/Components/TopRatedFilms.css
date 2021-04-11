@@ -1,4 +1,16 @@
 /* *{font-family: Roboto} */
+@import url(https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;1,400&display=swap);
+p,div,a,text,body{
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+ .section-heading{
+    padding-top: 30px;
+    padding-bottom: 10px;
+    padding-left:  120px;
+    
+   
+ }
 .box2 {
     margin-top: 6px;
     margin-bottom: 30px;
@@ -121,6 +133,7 @@ justify-content: center;
 
 .color {
     background-color: #4D2F28;
+
 }
 .modalSize {
     background-color:#4D2F28;

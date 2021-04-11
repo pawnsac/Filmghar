@@ -1,0 +1,132 @@
+.profileImage {
+
+    float: left;
+    max-width: 60px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 120px;
+    border-radius: 50%;
+}
+
+.buttonLog {
+    margin-top: 5px;
+    margin-left: 20px;
+    padding: 2px;
+    border-radius: 8px;
+    background-color: #4D2F28;
+    border-color: #707070;
+    height: 25px;
+    width: 90px;
+    color: white;
+    font-size: small;
+    opacity: 70%;
+    justify-content: center;
+}
+
+.nameStyle {
+    color: white;
+}
+
+.lineNav {
+
+    background-color: transparent;
+    border-color: transparent transparent;
+    border-bottom: 2px solid !important;
+}
+
+.linkNav {
+
+    border:transparent;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+   
+}
+
+.colorMus {
+    color: #D79C01;
+    text-decoration: underline;
+    text-decoration-color: #D79C01;
+    text-underline-offset: 11px;
+}
+
+.line{
+    opacity: 70%;
+}
+
+.tableStyle {
+    border-color: white;
+    padding: 10px;
+}
+
+.userName {
+    color: white;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 0px;
+}
+
+.backBox{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 115px;
+    margin-right: 115px;
+    height: 380px;
+    border: none;
+    background-color: #251502;
+    border-radius: 8px;
+}
+
+.insideRecs {
+    color: black;
+    padding: 0.5%;
+    /* padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px; */
+    height: 40px;
+    margin-left: 25px;
+    margin-top: 30px;
+    margin-right: 0px;
+    border: 0.25px solid whitesmoke;
+    border-radius: 8px;
+    background-color: #251502;
+    color: white;
+    font-size: medium;
+    
+}
+
+.buttonUser {
+    padding: 1px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    align-self: center;
+    margin-right: 10px;
+    border-radius: 8px;
+    background-color: #4D2F28;
+    border-color: #707070;
+    color: white;
+    font-size: small;
+    opacity: 90%;
+    justify-content: center;
+    float: right;
+}
+
+.buttonEmail {
+    padding: 1px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    margin-right: 10px;
+    border-radius: 8px;
+    background-color: #4D2F28;
+    border-color: #707070;
+    color: white;
+    font-size: small;
+    opacity: 90%;
+    justify-content: center;
+    float: right;
+}

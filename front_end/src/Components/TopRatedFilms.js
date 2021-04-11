@@ -5,8 +5,6 @@ import {Card, Button, Row, Col, Modal} from 'react-bootstrap';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link,Redirect} from 'react-router-dom';
-import topRated from './Dummy(topRatedFilms).json';
-
 import { FaInfoCircle } from 'react-icons/fa';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
@@ -60,47 +58,47 @@ import StarIcon from '@material-ui/icons/Star';
 
 function TopRatedFilms() {
     const [modalShow, setModalShow] = React.useState(0);
-    const [movies, setmovies] = React.useState([]);
+      const [movies, setmovies] = React.useState([]);
 
-    const fetch1 =  ()=>{
+const fetch1 =  ()=>{
+
+  fetch('api/toprated')
+  .then (response=>  response.json())
+  .then (data =>{
     
-      fetch('api/toprated')
-      .then (response=>  response.json())
-      .then (data =>{
+      var x = data.length
+      var changes=data
+      var y=""
+      var itr=0
+      var actors=[]
+      while (x!=0){
+        x--
+        y=changes[x].genres
+        y=y.split(",")
+        changes[x].genres=y
+        y=changes[x].actors
+        y=y.split(",")
+        while(true){
+        if(y[itr]==undefined){
+          break;
+        } 
+        actors.push(parseInt(y[itr]))
+        itr++
+        }
+        changes[x].actors=actors
+        actors=[]
+        y=changes[x].images
+        y=y.split(",")
+        changes[x].images=y
         
-          var x = data.length
-          var changes=data
-          var y=""
-          var itr=0
-          var actors=[]
-          while (x!=0){
-            x--
-            y=changes[x].genres
-            y=y.split(",")
-            changes[x].genres=y
-            y=changes[x].actors
-            y=y.split(",")
-            while(true){
-            if(y[itr]==undefined){
-              break;
-            } 
-            actors.push(parseInt(y[itr]))
-            itr++
-            }
-            changes[x].actors=actors
-            actors=[]
-            y=changes[x].images
-            y=y.split(",")
-            changes[x].images=y
-            
-    
-          }
-          
-          setmovies(changes)
-          }
-          )
-    }
-    fetch1()
+
+      }
+      
+      setmovies(changes)
+      }
+      )
+}
+fetch1()
     const renderCard = (card, index) => {
     return (
 
@@ -144,8 +142,10 @@ function TopRatedFilms() {
 
     return (
         <div className="my-5">
-    <h3 className="heading text-color">Top Rated Films</h3>
-    <p className="heading text-color">Five Top Rated films by the users of Film Ghar </p>
+        <div className = "section-heading">
+    <h3 >Top Rated Films</h3>
+    <p >Five Top Rated films by the users of Film Ghar </p>
+    </div>
 
     <div className="grid2 conatainer-fluid justify-content-center mx-5">{movies.map(renderCard)}</div>
         </div>

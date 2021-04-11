@@ -1,6 +1,5 @@
-
+/*import './TopRatedFilms.css';*/
 import './viewWatchList.css';
-
 import React from 'react';
 
 import {Carousel, Card, Button,Row,Col} from 'react-bootstrap';
@@ -13,9 +12,21 @@ import films from './Dummy(topRatedFilms).json';
 import StarIcon from '@material-ui/icons/Star';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import { FaInfoCircle } from 'react-icons/fa';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+
 //import Rating from '@material-ui/lab/Rating';
 
 function ViewWatchlist() {
+      const settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+
+    slidesToShow: 5,
+    slidesToScroll: 1
+  };
 
   const [modalShow, setModalShow] = React.useState(0);
     const renderCard = (card, index) => {
@@ -51,9 +62,7 @@ function ViewWatchlist() {
                         </Row>
                    
                        
-
-                       {/* <Button className="addedbutton2 mr-3 mb-3"><div className="p-1">REMOVE FROM WATCHLIST</div></Button> */}
-
+                       <Button className = "addedbutton"> ADDED TO WATCHLIST </Button>
                     </Card.Body>
                     { /* <AddCircleIcon fontSize= "large" style={{position:"absolute" ,marginLeft: "190px",color: "#D4AF37"}} />*/}
           
@@ -64,10 +73,14 @@ function ViewWatchlist() {
 
     return (
         <div >
-    <h3 className="heading text-color">Watch List</h3>
-    <p className="heading text-color"> Films in your Watchlist </p>
-     <div className="grid2 conatainer-fluid justify-content-center mx-5">{watchlists.filter(wl => wl.user_id === 1).map(user => (user.movie_id.map(renderCard))) }</div>
-   
+        <div className = "section-heading">
+    <h3 >Watch List</h3>
+    <p > Films in your Watchlist </p>
+</div>
+
+    <Slider {...settings} className="slider-cont mx-5" >
+    { watchlists.filter(wl => wl.user_id === 1).map(user => ( user.movie_id.map(renderCard))) }
+    </Slider>
    
 
 </div>

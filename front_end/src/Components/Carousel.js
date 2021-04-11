@@ -24,34 +24,6 @@ function CarouselView() {
                   <button type="button" class="btn btn-outline-primary BTN2 lab">Watch Trailer</button>
                 </Carousel.Caption>
               </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  className="d-block w-100"
-                  src={img2}
-                  alt="Second slide"
-                />
-
-                <Carousel.Caption className="text-md-left">
-                  <h3>Second slide label</h3>
-                  <h6>Genre</h6>
-                  <p>Description</p>
-                  <button type="button" class="btn btn-outline-primary BTN2 lab">Watch Trailer</button>
-                </Carousel.Caption>
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  className="d-block w-100"
-                  src={img3}
-                  alt="Third slide"
-                />
-
-                <Carousel.Caption className="text-md-left">
-                <h3>Second slide label</h3>
-                  <h6>Genre</h6>
-                  <p>Description</p>
-                  <button type="button" class="btn btn-outline-primary BTN2 lab" onClick={event =>  window.location.href='https://www.google.com/webhp?hl=en&sa=X&ved=0ahUKEwjh8sbVjcHvAhXSfMAKHcmpBHAQPAgI'}>Watch Trailer</button>
-              </Carousel.Caption>
-              </Carousel.Item>
         </Carousel>
     </div>
     )};

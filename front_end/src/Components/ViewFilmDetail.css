@@ -1,15 +1,18 @@
+/*@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap);*/
 
-a{
-	font: Roboto;
+
+
+/*a, body, text, p{
+	font-family: 'Roboto', sans-serif;
 	color: white;
-}
-/* body
+}*//*
+/body
 {
 	font: Roboto;
 	color: white;	
-} */
+} 
 
-/*.title{
+.title{
 
   font: Roboto;
   color: white;
@@ -22,6 +25,24 @@ a{
 
 }
 */
+/*a{
+	font: Roboto;
+	color: white;
+}
+p{
+	font: Roboto;
+	color: white;
+}
+.title{
+	font: Roboto;
+	color: white;
+}
+.genre{
+
+  font: Roboto;
+  color: white;
+
+}*/
 .poster{
 	width: 70%;
 	height: 90%;
@@ -78,6 +99,9 @@ float: left;
 	background-blend-mode: screen;
 }
 .film-detail-container{
+
+	font-family: 'Roboto', sans-serif;
+	color: white;
 	width: 100%;
 	height: 100%;
 }
@@ -88,21 +112,26 @@ float: left;
 .plot{
 	/*position: absolute;*/
 	padding-top: 20px;
-	font: Sitka Small;
+	
   	font-weight: 1;
+
+
+
+
 }
 
 .review-container{
+
 	/*max-width: 50%;*/
 	/*height: 200px;*/
 	flex:1;
 
-	max-width: 100%;
+	
 	  border: 0.2px solid #dedede;
   /*background-color: #f1f1f1;
   border-radius: 5px;*/
   padding: 10px;
-  margin: 10px 0;
+  margin: 20px 0;
 
 }
 
@@ -114,11 +143,13 @@ float: left;
 }
 
 .review-text{
+
 	display: flex;
 		flex-direction: row;
 	flex: 1;
 	font-size: 14px;
 	padding-top: 10px;
+	padding-left: 80px;
 	width: 80%;
 }
 .review-username{
@@ -170,6 +201,9 @@ border-color: #4D2F28;
 
 .review-title{
 	border-top: 1px solid !important;
+	padding-top: 30px;
+}
+.review-user{
 	padding-top: 20px;
 }
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {

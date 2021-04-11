@@ -13,10 +13,16 @@ class Films(models.Model):
 	images=models.TextField(max_length=2000, default="")
 	actors=models.CharField(max_length=100, default="")
 	trailer=models.CharField(max_length=100, default="")
-	director=models.CharField(max_length=100, default="")
+	director=models.IntegerField( default=1)
 	plot=models.TextField(max_length=2000, default="")
 	runtime=models.IntegerField( default=120)
-class Users(models.Model):
-	email = models.CharField(max_length=100, default="")
-	username = models.CharField(max_length=100, default="")
-	password = models.CharField(max_length=100, default="")
+class Persons(models.Model):
+	name=models.CharField(max_length=100, default="")
+	type=models.CharField(max_length=100, default="")
+	movies=models.CharField(max_length=400, default="")
+	description=models.TextField(max_length=2000, default="")
+	image=models.CharField(max_length=300, default="")
+
+class Watchlist(models.Model):
+	user_id=models.IntegerField( default=1)
+	movie_id=models.CharField(max_length=100, default="")

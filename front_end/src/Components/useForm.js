@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 
-
 const useForm = (callback, validate) => {
   const [values, setValues] = useState({
     username: '',
@@ -10,7 +9,7 @@ const useForm = (callback, validate) => {
   });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
- 
+
   const handleChange = e => {
     const { name, value } = e.target;
     setValues({
@@ -18,6 +17,7 @@ const useForm = (callback, validate) => {
       [name]: value
     });
   };
+
   function readCookie(name) {
     var nameEQ = name + "=";
     var ca = document.cookie.split(';');
@@ -31,28 +31,29 @@ const useForm = (callback, validate) => {
 
 var csrftoken = readCookie('csrftoken');
 
-  const handleSubmit = e => {
-    e.preventDefault();
+const handleSubmit = e => {
+  e.preventDefault();
 
-    setErrors(validate(values));
-    fetch('api/users/', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json',
-      "X-CSRFToken":csrftoken },
-      body: JSON.stringify({
-        username: values.username,
-        email: values.email,
-        password: values.password,
-      })
+  setErrors(validate(values));
+   
+  fetch('api/users/', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json',
+    "X-CSRFToken":csrftoken },
+    body: JSON.stringify({
+      username: values.username,
+      email: values.email,
+      password: values.password,
     })
-    .then( data => data.json())
-    .then(
-      data => {
-        console.log(data);
-      }
-    )
-    setIsSubmitting(true);
-  };
+  })
+  .then( data => data.json())
+  .then(
+    data => {
+      console.log(data);
+    }
+  )
+  setIsSubmitting(true);
+};
 
   useEffect(
     () => {

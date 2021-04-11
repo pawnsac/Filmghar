@@ -7,6 +7,7 @@ import {browserHistory} from 'react-router';
 import './Navbar.css';
 import movieData from './dummy.json';
 import Form2 from './Form';
+import profile from './profile'
 
 
 function Navbar({searchText, setSearchText}) {
@@ -58,7 +59,9 @@ function Navbar({searchText, setSearchText}) {
           <Link class="nav-link active " aria-current="page" to='/allfilms'>View All Films</Link>
         </li>
         <li class="nav-item2">
-        <Link to="/SignUp" className="btn back-color BTN">Sign up</Link>
+        {}
+        {/* const user = rememberMe ? localStorage.getItem('user') : ''; */}
+        <Link to={"/profile/"+localStorage.getItem("id")} className="btn back-color BTN">Profile</Link>
           {/* <button type="button" class="btn btn-outline-primary BTN"> Sign Up */}
           {/* <Form2/> */}
           {/* <Link class="text" to="https://www.facebook.com/">SignUp</Link> */}

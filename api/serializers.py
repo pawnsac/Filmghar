@@ -19,3 +19,7 @@ class UserSerializer(serializers.ModelSerializer):
         user = User.objects.create_user(**validated_data)
         Token.objects.create(user=user)
         return user
+class PersonsSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = Persons
+		fields = ('id','name','type','movies','description','image')

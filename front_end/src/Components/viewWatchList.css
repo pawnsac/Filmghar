@@ -5,15 +5,38 @@
     margin-left: 20px;
     margin-right: 20px;
     border: none;
+
+}
+.slick-slide {
+    margin: 0 20px;
+
+    
+}
+.slick-track
+{
+    display: flex !important;
+}
+/* the parent */
+.slick-list {
+    
+margin: 0 5px;
+    
 }
 
+.slider-cont{
 
+    padding-left: 30px;
+ padding-right: 70px;
+
+
+    
+    
+}
 .grid2 {
+
     min-height: 50%;
     max-height: 80%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+
    
 }
 .Card.Img {
@@ -21,9 +44,7 @@
     width: 15px;
 }
 
-.grid2 > div {
-    flex-basis: calc(20% - 60px);
-}
+
 .heading {
     padding-left: 112px;
     

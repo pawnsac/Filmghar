@@ -16,6 +16,7 @@ urlpatterns = [
     path('toprated', FeatFilmView.as_view()),
     path('film/<str:pk>/', FilmInfoView.as_view()),
 	path('auth', obtain_auth_token),
+	path('cast', PersonsView.as_view()),
 	path('', include(router.urls)),
 
 	

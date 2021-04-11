@@ -9,7 +9,6 @@ import './ViewFilmDetail.css';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import Container from 'react-bootstrap/Container'
 
-import filmActors from './Person.json';
 import movieReviews from './Reviews.json';
 import users from './Users.json';
 import axios from "axios";
@@ -27,7 +26,30 @@ function ViewFilmDetails(props){
   };
 
   const [actorData, setActordata] = React.useState([])
+  const [actors, setactors] = React.useState([])
 
+  const fetch_actors=()=>{
+
+    fetch(`http://127.0.0.1:8000/api/cast`)
+    .then(response => response.json())
+    .then(data => {
+      var x = data.length
+      var changes=data
+      var y=""
+      var itr=0
+      while (x!=0){
+        x--
+        y=changes[x].movies
+        y=y.split(",")
+        changes[x].movies=y
+      }
+      console.log(changes)
+      setactors(changes);
+    })
+
+
+}
+fetch_actors()
   console.log("ACTORS")
   console.log(props.location.state.referrer.actors)
 
@@ -85,19 +107,19 @@ axios.request(options).then(function (response) {
 
 
 
-  const findActorname = (id) => filmActors.map(actor => {
+  const findActorname = (id) => actors.map(actor => {
   // if this task has the same ID as the edited task
     if (id === actor.id) {
       return (actor.name)
     }
 })
-    const findActorimg = (id) => filmActors.map(actor => {
+    const findActorimg = (id) => actors.map(actor => {
   // if this task has the same ID as the edited task
     if (id === actor.id) {
       //
       return (actor.image)
     }})
-        const findActorType = (id) => filmActors.map(actor => {
+        const findActorType = (id) => actors.map(actor => {
   // if this task has the same ID as the edited task
     if (id === actor.id) {
       //
@@ -110,13 +132,15 @@ axios.request(options).then(function (response) {
     return (
            
             <Card style={{ width: '18rem'}} className="box2">
+                  <Link to={{pathname: `/nametag/${card}`, state: { referrer: card }}}>    
                     <Card.Img variant="top"  style={{height: '12rem' }} src={findActorimg(card)} />
                     <Card.Body className="color"  style={{height: '7rem', position: "relative"}}>
                     <div>
-                        <Card.Title  className="text-color" style={{ textAlign: 'justify', position: "absolute"}}>{findActorname(card)}</Card.Title>
+                        <Card.Title style={{ textAlign: 'justify', position: "absolute"}}>{findActorname(card)}</Card.Title>
                          <Card.Text className="person-type-text">{findActorType(card)}</Card.Text>
                          </div>
                     </Card.Body>
+                  </Link>
             </Card>
     )}
 
@@ -184,8 +208,14 @@ return (
       <Form.Group >
       <Row>
       <div>
-<div><img className = "placeholder-image" src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" alt="Avatar"/></div>
- <div className ="review-text"> <div><Rating name="half-rating-read" value={props.location.state.referrer.rating} precision={0.5} readOnly /> </div><Form.Control className = "comment-form"   type="text" placeholder="Write a comment" /></div>
+
+<div className = "review-user"><img className = "placeholder-image" src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" alt="Avatar"/></div>
+ 
+ 
+ <Row><Rating name="half-rating-read" value={props.location.state.referrer.rating} precision={0.5} readOnly /> </Row>
+ <Row style = {{paddingTop:'20px', paddingLeft:'10px'}}><Form.Control className = "comment-form"   type="text" placeholder="Write a comment" /></Row>
+ 
+  
   </div>
   </Row>
 

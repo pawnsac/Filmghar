@@ -5,4 +5,5 @@ from .models import *
 
 admin.site.register(Films)
 
-admin.site.register(Users)
+admin.site.register(Persons)
+
