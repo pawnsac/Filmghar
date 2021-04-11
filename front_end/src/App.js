@@ -1,19 +1,18 @@
 import './App.css';
 import React, { Component, useState, useEffect} from 'react';
 import {Carousel, Button, Card, CardColumns, Row, Col, Container} from 'react-bootstrap';
-import {Redirect, Switch, Route, Router, useParams} from 'react-router-dom';
+import {Redirect, Link, Switch, Route, Router, useParams} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './Components/Navbar';
 import Guestbar from './Components/guest';
 import AllFilms from './Components/allFilms';
-import profile from './Components/profile';
-
+import profile from './Components/profile'; 
 import TopRatedFilms from './Components/TopRatedFilms';
 import SearchView from './Components/Search';
 import Wheel from './Components/Spinner';
 import SignUp from './Components/SignUp';
 import nametag from './Components/nametags';
-import login from'./Components/login';
+import Login from'./Components/login';
 
 import SpinnerModal from './Components/SpinnerModal';
 import IntermediateSpinnerModal from './Components/IntermediateSpinnerModal';
@@ -26,12 +25,60 @@ import img1 from './img1.jpg';
 import img2 from './img2.jpg';
 import img3 from './img3.jpg';
 
+//https://whispering-mountain-02462.herokuapp.com/
+
 function MyApp() {
   const [searchResults, setSearchResults] = useState([]);
   const [searchText, setSearchText] = useState('');
   const [modalShow, setModalShow] = React.useState(0);
   const places = ['Movie1', 'Movie2', 'Movie3', 'Movie4', 'Movie5'];
+  const [user_id, setuid] = React.useState(0);
+  const [movies, setmovies] = React.useState([]);
 
+  const fetch1 =  ()=>{
+
+    fetch('api/allfilms')
+    .then (response=>  response.json())
+    .then (data =>{
+      
+        var x = data.length
+        var changes=data
+        var y=""
+        var itr=0
+        var actors=[]
+        while (x!=0){
+          x--
+          y=changes[x].genres
+          y=y.split(",")
+          changes[x].genres=y
+          y=changes[x].actors
+          y=y.split(",")
+          while(true){
+          if(y[itr]==undefined){
+            break;
+          } 
+          actors.push(parseInt(y[itr]))
+          itr++
+          }
+          changes[x].actors=actors
+          actors=[]
+          y=changes[x].images
+          y=y.split(",")
+          changes[x].images=y
+          
+          itr=0
+        }
+        console.log(changes)
+        setmovies(changes)
+        }
+        )
+  }
+  fetch1()
+  
+  const userLogin = (tok) => {
+    setuid(tok);
+  }
+  console.log(user_id)
   // function imagesPrint() {
   //   const renderCard = (m, index) => {
   //     return (
@@ -74,6 +121,7 @@ function MyApp() {
 
   
   useEffect(() => {
+    console.log(user_id)
     if (searchText)
     {fetch(`api/search?search=${searchText}`)
       .then(response => response.json())
@@ -105,10 +153,7 @@ function MyApp() {
           
   
         }
-        
-
-
-        
+                
         setSearchResults(changes);
       })
     }
@@ -118,7 +163,7 @@ function MyApp() {
   return (
     <div>
       <Switch>
-        <Route path="/login" component={login}>
+        <Route path="/login" component={Login}>
         </Route>
 
         <Route path="/SignUp" component={SignUp}>
@@ -139,16 +184,30 @@ function MyApp() {
               <Carousel.Item>
                 <img
                   className="d-block w-100 imageFit"
-                  src={img1}
+                  src={"https://s01.sgp1.cdn.digitaloceanspaces.com/article/110482-yywgogyftj-1547388139.jpg"}
                   alt="First slide"
+                style={{
+                  opacity: '0.7'
+              
+                }}
                 />
                 <Carousel.Caption className="text-md-left" >
-                <h3>Second slide label</h3>
-                  <h6>Drama Comedy</h6>
-                  <p>Description</p>
-                  <button type="button" class="btn btn-outline-primary BTN2 lab" onClick={event =>  window.location.href=''}>Main Hoon Na</button>
+                <h3>Classic</h3>
+                  <h6>Action Drama</h6>
+                  <p>Sultan Rahi was not holding back</p>
+                  
+                  <Link
+            to={{
+            pathname: `/movie/1`,
+            state: { referrer: movies[0] }
+            }}
+            >
+              <button type="button" class="btn btn-outline-primary BTN2 lab"  >Mola Jat</button>
+</Link>
                 </Carousel.Caption>
               </Carousel.Item>
+
+
               </Carousel>
       
       
@@ -198,5 +257,4 @@ function MyApp() {
 }
 
 export default MyApp;
-
 

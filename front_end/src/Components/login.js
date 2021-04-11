@@ -30,7 +30,7 @@ function Login() {
                     {/* <div>Hello</div> */}
                     {/* <formLogin/> */}
                     {/* {!isSubmitted ? ( */}
-                    <FormLogin submitForm={submitForm} />
+                    <FormLogin submitForm={submitForm}/>
                     {/* ) : (
                         <div className='form-content-right'>
                             <h1 className='form-success'>We have received your request!</h1>

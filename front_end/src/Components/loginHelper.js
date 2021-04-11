@@ -53,6 +53,7 @@ const FormLogin = () => {
                 { 
                     username=user.username
                     temp_id=user.id
+
                 }
               })
           }
@@ -65,6 +66,7 @@ const FormLogin = () => {
           username: username,
           email: email,
           password: password,
+
         })
       })
       .then( data => data.json())

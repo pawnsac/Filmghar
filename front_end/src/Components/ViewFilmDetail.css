@@ -223,3 +223,4 @@ border-color: #4D2F28;
 }
 
 
+.nav-item { color: white; background-color: white; text-decoration:none; } a.nav-item.nav-link:hover { color: #D79C01; text-decoration:none; } a.nav-item.nav-link.active { color: #D79C01; text-decoration:none; } 

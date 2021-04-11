@@ -27,8 +27,9 @@ function VerticalModal(props) {
         <Modal.Body>
           <h4 className="sideDist" style={{color: 'black'}} >{props.content.title}</h4>
 
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7n2hpzE1hNzc4V7nHj_GT2CWSqtjCld0PhQ&usqp=CAU" className="float-left ml-0 px-3"/>
-          <p className="container-75 text-left px-5 w-0" style={{width: '2rem'}}>
+          <img src={props.content.images[0]} className="float-left ml-0 px-3"/>
+          <p className="container-75 text-left px-5 w-0" style={{width: '2rem', color: 'black'}}>
+
           {props.content.plot}
           </p>
           <div className="container-75 modalText pt-5 mt-2" style={{color: 'black'}} ><b>Genre:</b>

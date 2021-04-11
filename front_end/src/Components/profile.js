@@ -15,7 +15,7 @@ function profileDetails(props){
     const id = varPar[2]
     console.log("Ideee", varPar[2])
     const identity = parseInt(id)
-
+    console.log(props)
     function readCookie(name) {
         var nameEQ = name + "=";
         var ca = document.cookie.split(';');
@@ -32,7 +32,7 @@ function profileDetails(props){
     
     const fetch1 = ()=>{
     
-        fetch('http://127.0.0.1:8000/api/users/', {
+        fetch('https://whispering-mountain-02462.herokuapp.com/api/users/', {
             method: 'GET',
             headers: {'Content-Type': 'application/json',
             "X-CSRFToken":csrftoken }

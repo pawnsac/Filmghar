@@ -57,9 +57,9 @@ const fetch1 =  ()=>{
         y=y.split(",")
         changes[x].images=y
         
-
+        itr=0
       }
-      
+      console.log(changes)
       setmovies(changes)
       }
       )

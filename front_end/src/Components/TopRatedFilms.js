@@ -90,7 +90,7 @@ const fetch1 =  ()=>{
         y=changes[x].images
         y=y.split(",")
         changes[x].images=y
-        
+        itr=0
 
       }
       

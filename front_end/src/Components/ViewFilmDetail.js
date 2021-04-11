@@ -42,6 +42,7 @@ function ViewFilmDetails(props){
         y=changes[x].movies
         y=y.split(",")
         changes[x].movies=y
+        console.log(y)
       }
       console.log(changes)
       setactors(changes);

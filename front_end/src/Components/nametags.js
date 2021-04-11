@@ -21,18 +21,33 @@ function NameTags(props) {
 
 const fetch_actors=()=>{
 
-    fetch(`http://127.0.0.1:8000/api/cast`)
+    fetch(`https://whispering-mountain-02462.herokuapp.com/api/cast`)
     .then(response => response.json())
     .then(data => {
       var x = data.length
       var changes=data
       var y=""
       var itr=0
+      var mov=[]
+        
       while (x!=0){
         x--
         y=changes[x].movies
         y=y.split(",")
-        changes[x].movies=y
+        itr=y.length
+        while(itr!=0){
+            itr--
+            if(itr==0){
+            mov.push(y[itr])
+                break
+            }
+            mov.push(y[itr])
+            
+        
+        }
+
+        changes[x].movies=mov
+        mov=[]
       }
       console.log(changes)
       setactors(changes);
@@ -43,7 +58,7 @@ const fetch_actors=()=>{
 
 const fetch1 =  ()=>{
 
-  fetch('http://127.0.0.1:8000/api/allfilms')
+  fetch('https://whispering-mountain-02462.herokuapp.com/api/allfilms')
   .then (response=>  response.json())
   .then (data =>{
     
@@ -72,7 +87,7 @@ const fetch1 =  ()=>{
         y=y.split(",")
         changes[x].images=y
         
-
+        itr=0
       }
     
       setmovies(changes)
