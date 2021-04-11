@@ -146,6 +146,7 @@ STATICFILES_DIRS=[os.path.join(BASE_DIR, 'front_end/build/static'),
 CORS_ORIGIN_WHITELIST = [
 
     "http://localhost:3000",
+    "https://whispering-mountain-02462.herokuapp.com"
 ]
 
 import dj_database_url
