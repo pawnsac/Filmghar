@@ -21,7 +21,7 @@ function NameTags(props) {
 
 const fetch_actors=()=>{
 
-    fetch(`https://whispering-mountain-02462.herokuapp.com/api/cast`)
+    fetch(`/api/cast`)
     .then(response => response.json())
     .then(data => {
       var x = data.length
@@ -58,7 +58,7 @@ const fetch_actors=()=>{
 
 const fetch1 =  ()=>{
 
-  fetch('https://whispering-mountain-02462.herokuapp.com/api/allfilms')
+  fetch('/api/allfilms')
   .then (response=>  response.json())
   .then (data =>{
     

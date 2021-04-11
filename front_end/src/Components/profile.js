@@ -32,7 +32,7 @@ function profileDetails(props){
     
     const fetch1 = ()=>{
     
-        fetch('https://whispering-mountain-02462.herokuapp.com/api/users/', {
+        fetch('/api/users/', {
             method: 'GET',
             headers: {'Content-Type': 'application/json',
             "X-CSRFToken":csrftoken }
