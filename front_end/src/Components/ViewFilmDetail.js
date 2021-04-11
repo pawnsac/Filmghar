@@ -30,7 +30,7 @@ function ViewFilmDetails(props){
 
   const fetch_actors=()=>{
 
-    fetch(`http://127.0.0.1:8000/api/cast`)
+    fetch(`https://whispering-mountain-02462.herokuapp.com/api/cast`)
     .then(response => response.json())
     .then(data => {
       var x = data.length
