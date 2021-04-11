@@ -148,7 +148,7 @@ axios.request(options).then(function (response) {
 
 return (
 <Container className="film-detail-container">
-	<div className="moviestill"  style={{ background: 'url(https://m.media-amazon.com/images/M/MV5BMDhkZTQzNTItMzhhNi00MWY5LWE3NjItOWQ4MmE5YWU3ZGYyXkEyXkFqcGdeQXVyMjQ3NDc5MzY@._V1_.jpg)'}}>
+	<div className="moviestill"  style={{ background: 'url(http://news.bbc.co.uk/media/images/47822000/jpg/_47822025_faiz_rahi_aarzo_zeba766.jpg)'}}>
 		<Row >
 		 <Col >
        	<img className= "poster" src={props.location.state.referrer.posterUrl}/>
