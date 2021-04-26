@@ -43,6 +43,8 @@ function ViewWatchlist() {
   const [wlist, setwlist] = React.useState([]);
   const [movies, setmovies] = React.useState([]);
   const [wmoves, setwmoves] = React.useState([]);
+  const [load, setload] = React.useState(true);
+  
   var csrftoken = readCookie('csrftoken');
   const id=  localStorage.getItem('user')
   var token=  localStorage.getItem('token')
@@ -90,7 +92,7 @@ data
     fetch_wlist()}
   }
 
-  if(wlist.length>0 &&movies.length>0 && wmoves.length==0){
+  if(wlist.length>0 &&movies.length>0 && wmoves.length==0 &&load){
 
     const mov_list={
       user_id:id,
@@ -105,7 +107,8 @@ var len2=wlist.length
       if(wlist[len2].user_id==id){
         mov_list.movie_id.push(wlist[len2].movie_id[0])
         
-      }
+      } 
+
     }
 
     g=mov_list
@@ -126,6 +129,7 @@ var len2=wlist.length
     }
     console.log(moves)
     setwmoves(moves)
+    setload(false)
   }
   const fetch1 =  ()=>{
 
