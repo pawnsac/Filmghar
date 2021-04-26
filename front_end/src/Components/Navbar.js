@@ -97,7 +97,7 @@ fetch(g)
     <div className="NAVBAR">
       <nav class="navbar navbar-expand-lg navbar-dark">
   <div class="container-fluid">
-    <Link class="navbar-brand" to="https://whispering-mountain-02462.herokuapp.com" onClick={()=>{window.location.reload(false)}}>
+    <Link class="navbar-brand" to="/" onClick={()=>{  history.push('/'); window.location.reload(false)}}>
       <img src={filmlogo} width={70} height= {25}/>
     
     </Link>
