@@ -71,7 +71,7 @@ const fetch_reviews=()=>{
 
 }
 if(actors.length==0) fetch_actors();
-if(reviews.length==0) fetch_reviews();
+if(reviews_data.length==0) fetch_reviews();
   
   console.log("ACTORS")
   console.log(props.location.state.referrer.actors)
