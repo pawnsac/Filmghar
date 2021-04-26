@@ -97,8 +97,9 @@ fetch(g)
     <div className="NAVBAR">
       <nav class="navbar navbar-expand-lg navbar-dark">
   <div class="container-fluid">
-    <Link class="navbar-brand" to="/">
+    <Link class="navbar-brand" to="https://whispering-mountain-02462.herokuapp.com" onClick={()=>{window.location.reload(false)}}>
       <img src={filmlogo} width={70} height= {25}/>
+    
     </Link>
 
  
@@ -207,7 +208,7 @@ fetch(g)
 
             <li class="nav-item3"> 
           {(localStorage.getItem("user") != null) ? 
-        <Link class="nav-link active " to={"/"} aria-current="page" className="btn back-color BTN" onClick={()=>{localStorage.clear();     window.location.reload(false);}}>Logout
+        <Link class="nav-link active " to={"https://whispering-mountain-02462.herokuapp.com"} aria-current="page" className="btn back-color BTN" onClick={()=>{localStorage.clear();     window.location.reload(false);}}>Logout
 
         </Link>
             :<></> 
