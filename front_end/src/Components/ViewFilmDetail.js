@@ -1,8 +1,7 @@
 import React, { useEffect,Component, useState} from 'react';
 import {Form, Card, Button, Tab, Tabs} from 'react-bootstrap';
 import {Row, Col} from 'react-bootstrap';
-import {Redirect, Switch, Route, Router,useHistory, Link} from 'react-router-dom';
-
+import {Link} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap/dist/js/bootstrap.js";
 import topRated from './Dummy(topRatedFilms).json';
@@ -34,78 +33,6 @@ function ViewFilmDetails(props){
   const [reviews_data, setreviews_data] = React.useState([])
   const [review_text, setreview] = React.useState('')
   const [userss, setuserss] = React.useState('')
-  const history = useHistory();
-  const [movies,setmovies]=useState([]);
-  const [genre_on, setg]=useState(false);
-
-const [cg,scg]=useState("")
-  var idUser = null;
-var genre="Genre"
-  function checkLog() {
-      idUser = localStorage.getItem("user")
-      if(idUser != null)
-      {
-        setIsLog(true);    
-      }
-      else
-      {
-        setIsLog(false);
-      }
-      
-  }
-  
-const genre_load=(gr)=>{
-
-scg(gr)
-const g='api/genre?search='+gr
-fetch(g)
-  .then (response=>  response.json())
-  .then (data =>{
-    console.log(data)
-
-      var x = data.length
-      var changes=data
-      var y=""
-      var itr=0
-      var actors=[]
-      while (x!=0){
-        x--
-        y=changes[x].genres
-        y=y.split(",")
-        changes[x].genres=y
-        y=changes[x].actors
-        y=y.split(",")
-        while(true){
-        if(y[itr]==undefined){
-          break;
-        } 
-        actors.push(parseInt(y[itr]))
-        itr++
-        }
-        changes[x].actors=actors
-        actors=[]
-        y=changes[x].images
-        y=y.split(",")
-        changes[x].images=y
-        
-        itr=0
-      }
-      console.log(changes)
-      setmovies(changes)
-      setg(true)
-      }
-      )
- 
-
-
-}
-if(genre_on){
-
-  setg(false);
-  console.log("redirect")
-  history.push('genres',{ mov:movies, genre:cg})
-      }
-
   function readCookie(name) {
     var nameEQ = name + "=";
     var ca = document.cookie.split(';');
@@ -399,7 +326,7 @@ return (
 					</div>
 					<div class="tab-pane fade" id="nav-genre" role="tabpanel" >
 					       {props.location.state.referrer.genres.map(genre => (
-       		<div className = "name-tag-button-container"><Button className= "name-tag-button" onClick={(ev)=>{ev.preventDefault();genre_load(genre)}}>{genre} </Button></div>
+       		<div className = "name-tag-button-container"><Button className= "name-tag-button">{genre} </Button></div>
        		))}
 					</div> 
 				</div>
@@ -430,7 +357,7 @@ return (
 
       <Row>
 
-      {userss.length>0? reviews_data.filter(revw => revw.movie_id === props.location.state.referrer.id).map(revw => (
+      {userss.length==0? <div>{reviews_data.filter(revw => revw.movie_id === props.location.state.referrer.id).map(revw => (
     <div className = "all-reviews-container">
              {userss.filter(user => user.id === revw.user_id).map(user => (
                <div className = "review-container">
@@ -442,7 +369,7 @@ return (
              
       
       </div>
-             )) : <></>}
+             )) }</div>: <></>}
  
 
       </Row>
