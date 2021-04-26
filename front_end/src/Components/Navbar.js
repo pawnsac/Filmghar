@@ -208,7 +208,7 @@ fetch(g)
 
             <li class="nav-item3"> 
           {(localStorage.getItem("user") != null) ? 
-        <Link class="nav-link active " to={"https://whispering-mountain-02462.herokuapp.com"} aria-current="page" className="btn back-color BTN" onClick={()=>{localStorage.clear();     window.location.reload(false);}}>Logout
+        <Link class="nav-link active " to={"/"} aria-current="page" className="btn back-color BTN" onClick={()=>{localStorage.clear();  history.push('/');    window.location.reload(false);}}>Logout
 
         </Link>
             :<></> 
