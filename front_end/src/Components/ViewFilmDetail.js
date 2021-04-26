@@ -30,7 +30,7 @@ function ViewFilmDetails(props){
 
   const [actorData, setActordata] = React.useState([])
   const [actors, setactors] = React.useState([])
-  const [reviews, setreviews] = React.useState([])
+  const [reviews_data, setreviews_data] = React.useState([])
   const [review_text, setreview] = React.useState('')
 
 const success_rate=()=>{
@@ -64,7 +64,7 @@ const fetch_reviews=()=>{
   fetch(`/api/reviews`)
   .then(response => response.json())
   .then(data => {
-    setreviews(data);
+    setreviews_data(data);
     console.log(data)
   })
 
@@ -304,7 +304,7 @@ return (
       </Row>
 
       <Row>
-{reviews.filter(revw => revw.movie_id === props.location.state.referrer.id).map(revw => (
+{reviews_data.filter(revw => revw.movie_id === props.location.state.referrer.id).map(revw => (
 	<div className = "all-reviews-container">
        		{users.filter(user => user.id === revw.user_id).map(user => (
        			<div className = "review-container">
