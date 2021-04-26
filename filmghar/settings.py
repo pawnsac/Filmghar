@@ -61,11 +61,6 @@ REST_FRAMEWORK = {
 }
 import datetime
 
-SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': datetime.timedelta(days=15),
-    'REFRESH_TOKEN_LIFETIME': datetime.timedelta(days=15),
-}
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

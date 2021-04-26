@@ -3,7 +3,6 @@ from .views import *
 from rest_framework.authtoken.views import obtain_auth_token
 from rest_framework import routers
 from django.conf.urls import include
-from rest_framework_simplejwt import views as jwt_views
 
 
 router = routers.DefaultRouter()
