@@ -32,6 +32,39 @@ function ViewFilmDetails(props){
   const [actors, setactors] = React.useState([])
   const [reviews_data, setreviews_data] = React.useState([])
   const [review_text, setreview] = React.useState('')
+  const [userss, setuserss] = React.useState('')
+  function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+
+var csrftoken = readCookie('csrftoken')
+
+const fetch1 = ()=>{
+
+    fetch('/api/users/', {
+        method: 'GET',
+        headers: {'Content-Type': 'application/json',
+        "X-CSRFToken":csrftoken }
+      })
+      .then( data =>{
+        console.log(data)
+
+        return data.json()})
+      .then(
+        data => {
+        
+              setuserss(data)
+            })
+        }        
+if(userss.length==0) fetch1()
 
 const success_rate=()=>{
 toast.success("You rated a film!")
@@ -205,10 +238,10 @@ return
 (<div>
   {data.filter(revw => revw.movie_id === props.location.state.referrer.id).map(revw => (
     <div className = "all-reviews-container">
-             {users.filter(user => user.id === revw.user_id).map(user => (
+             {userss.filter(user => user.id === revw.user_id).map(user => (
                <div className = "review-container">
                
-               <div ><img className = "placeholder-image" src = {user.photo}/></div>
+               <div ><img className = "placeholder-image" src = "https://avatars.githubusercontent.com/u/5268568?s=400&u=87ff62ba0e078faa7c63162bc8376d422e896d2b&v=4"/></div>
                <div >{/*<div><Rating name="half-rating-read" value={revw.rating} precision={0.5} readOnly /></div>*/}<div className = "review-username">{user.username}</div><div className ="review-text" >{revw.review}</div></div>
                </div>
                )) }
@@ -326,10 +359,10 @@ return (
 
       {reviews_data.filter(revw => revw.movie_id === props.location.state.referrer.id).map(revw => (
     <div className = "all-reviews-container">
-             {users.filter(user => user.id === revw.user_id).map(user => (
+             {userss.filter(user => user.id === revw.user_id).map(user => (
                <div className = "review-container">
                
-               <div ><img className = "placeholder-image" src = {user.photo}/></div>
+               <div ><img className = "placeholder-image" src = "https://avatars.githubusercontent.com/u/5268568?s=400&u=87ff62ba0e078faa7c63162bc8376d422e896d2b&v=4"/></div>
                <div >{/*<div><Rating name="half-rating-read" value={revw.rating} precision={0.5} readOnly /></div>*/}<div className = "review-username">{user.username}</div><div className ="review-text" >{revw.review}</div></div>
                </div>
                )) }
