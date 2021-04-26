@@ -1,5 +1,6 @@
 import React from 'react';
 import './Form.css';
+import {Link,Redirect} from 'react-router-dom';
 
 const FormSuccess = () => {
   return (
