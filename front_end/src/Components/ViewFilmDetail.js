@@ -357,7 +357,7 @@ return (
 
       <Row>
 
-      {userss.length==0? <div>{reviews_data.filter(revw => revw.movie_id === props.location.state.referrer.id).map(revw => (
+      {userss.length>=0? <div>{reviews_data.filter(revw => revw.movie_id === props.location.state.referrer.id).map(revw => (
     <div className = "all-reviews-container">
              {userss.filter(user => user.id === revw.user_id).map(user => (
                <div className = "review-container">

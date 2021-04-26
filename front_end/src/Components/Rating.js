@@ -47,7 +47,7 @@ const StarRating = props => {
 
   const sendRating = () => {
     console.log("Rating recvd",rating)
-
+    if(rating>=1&&rating<=5){
     var new_rat=rating
     const ext=parseFloat(props.movie.rating.toString()) *props.movie.num_of_users
     var nums=props.movie.num_of_users+1
@@ -60,7 +60,7 @@ const StarRating = props => {
     mov_card.num_of_users=mov_card.num_of_users+1
 console.log(mov_card.rating)
 
-    sendr(mov_card)
+    sendr(mov_card)}
   }
  
   function readCookie(name) {
