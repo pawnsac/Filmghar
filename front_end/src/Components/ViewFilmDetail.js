@@ -200,7 +200,24 @@ const handle_review=(event)=>{
       return (actor.type)
     }})
 
+const render_review=(data)=>{
+return 
+(<div>
+  {data.filter(revw => revw.movie_id === props.location.state.referrer.id).map(revw => (
+    <div className = "all-reviews-container">
+             {users.filter(user => user.id === revw.user_id).map(user => (
+               <div className = "review-container">
+               
+               <div ><img className = "placeholder-image" src = {user.photo}/></div>
+               <div >{/*<div><Rating name="half-rating-read" value={revw.rating} precision={0.5} readOnly /></div>*/}<div className = "review-username">{user.username}</div><div className ="review-text" >{revw.review}</div></div>
+               </div>
+               )) }
+             
+      
+      </div>
+             ))}</div>)
 
+}
 
       const renderCard = (card, index) => {
     return (
@@ -303,21 +320,32 @@ return (
 </Form.Group>
       </Row>
 
+
+
       <Row>
-{reviews_data.filter(revw => revw.movie_id === props.location.state.referrer.id).map(revw => (
-	<div className = "all-reviews-container">
-       		{users.filter(user => user.id === revw.user_id).map(user => (
-       			<div className = "review-container">
-       			
-       			<div ><img className = "placeholder-image" src = {user.photo}/></div>
-       			<div >{/*<div><Rating name="half-rating-read" value={revw.rating} precision={0.5} readOnly /></div>*/}<div className = "review-username">{user.username}</div><div className ="review-text" >{revw.review}</div></div>
-       			</div>
-       			)) }
-       		
-    
-    </div>
-       		))}
+
+      {reviews_data.filter(revw => revw.movie_id === props.location.state.referrer.id).map(revw => (
+    <div className = "all-reviews-container">
+             {users.filter(user => user.id === revw.user_id).map(user => (
+               <div className = "review-container">
+               
+               <div ><img className = "placeholder-image" src = {user.photo}/></div>
+               <div >{/*<div><Rating name="half-rating-read" value={revw.rating} precision={0.5} readOnly /></div>*/}<div className = "review-username">{user.username}</div><div className ="review-text" >{revw.review}</div></div>
+               </div>
+               )) }
+             
+      
+      </div>
+             ))}
+ 
+
       </Row>
+
+<Row>
+
+  The End
+</Row>
+
       </Container>
 
 
