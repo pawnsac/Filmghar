@@ -10,7 +10,7 @@ import 'reactjs-popup/dist/index.css';
 
 
 function VerticalModal(props) {
-  console.log(props);
+  //console.log(props);
     return (
         <Modal
         {...props}

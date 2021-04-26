@@ -11,6 +11,7 @@
     transform: translate(-50%, -50%);
     /* display: none; */
   }
+  .parent { position: relative; top: 100px; } .child { position: absolute; top: 200px; left: 180px; height: 30px; } 
   
   .form-img-2 {
     width: 60%;

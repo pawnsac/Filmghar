@@ -4,8 +4,9 @@ import './Form.css';
 const FormSuccess = () => {
   return (
     <div className='form-content-right'>
-      <h1 className='form-success'>We have received your request!</h1>
-      <img className='form-img-2' src='img/img-3.svg' alt='success-image' />
+      <h1 className='form-success mt-5 parent'>We have received your request!</h1>
+      <Link to="/login" className="btn addedbutton mb-5 child" style={{color:'white'}}>Login Now</Link>
+      {/* <Button  className = "addedbutton p-2 ml-2" >ADD TO WATCHLIST</Button> */}
     </div>
   );
 };

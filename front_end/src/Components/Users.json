@@ -34,5 +34,15 @@
         "dateofbirth": "6-6-6666",
         "email":"bob3@bob.com",
         "photo": "https://avatars.githubusercontent.com/u/5268568?s=400&u=87ff62ba0e078faa7c63162bc8376d422e896d2b&v=4"
+    },
+        {
+        "id": 5,
+        "name": "Bob the Builder", 
+        "username": "tumahreabbu",
+        "password": "ewtdvsdsgd",
+        "dateofbirth": "6-6-6666",
+        "email":"bob3@bob.com",
+        "photo": "https://avatars.githubusercontent.com/u/5268568?s=400&u=87ff62ba0e078faa7c63162bc8376d422e896d2b&v=4"
     }
+
 ]

@@ -6,11 +6,13 @@ import FormLogin from './loginHelper';
 
 
 function Login() {
+
     const [isSubmitted, setIsSubmitted] = useState(false);
 
     function submitForm() {
         setIsSubmitted(true);
     }
+
 
     return (
         <div className="scrollNo">
@@ -30,7 +32,7 @@ function Login() {
                     {/* <div>Hello</div> */}
                     {/* <formLogin/> */}
                     {/* {!isSubmitted ? ( */}
-                    <FormLogin submitForm={submitForm}/>
+                    <FormLogin submitForm={submitForm} />
                     {/* ) : (
                         <div className='form-content-right'>
                             <h1 className='form-success'>We have received your request!</h1>

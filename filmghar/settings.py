@@ -47,12 +47,25 @@ INSTALLED_APPS = [
 CORS_ORIGIN_ALLOW_ALL = True
 
 REST_FRAMEWORK = {
+
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
         'rest_framework.authentication.SessionAuthentication',
+
+    ],
+   
+
         # 'knox.auth.TokenAuthentication',
-    ]
+ 
+
 }
+import datetime
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': datetime.timedelta(days=15),
+    'REFRESH_TOKEN_LIFETIME': datetime.timedelta(days=15),
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

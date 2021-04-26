@@ -7,7 +7,7 @@ from rest_framework.authtoken.models import Token
 class FilmsSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Films
-		fields = ('id','title','year','rating','posterUrl','genres','images','plot','actors','director','trailer','runtime')
+		fields = ('id','title','year','rating','posterUrl','genres','images','plot','actors','director','trailer','runtime','num_of_users')
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -23,3 +23,11 @@ class PersonsSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Persons
 		fields = ('id','name','type','movies','description','image')
+class ReviewsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Reviews
+        fields = ('id','user_id','movie_id','review')
+class WatchlistSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Watchlist
+        fields = ('id','user_id','movie_id')

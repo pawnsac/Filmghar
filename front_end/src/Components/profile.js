@@ -27,7 +27,7 @@ function profileDetails(props){
         return null;
     }
   
-    
+ 
     var csrftoken = readCookie('csrftoken')
     
     const fetch1 = ()=>{
@@ -47,7 +47,7 @@ function profileDetails(props){
                   setusers(data)
                 })
             }        
-fetch1()
+if(users.length==0) fetch1()
 
 
 

@@ -6,6 +6,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './Components/Navbar';
 import Guestbar from './Components/guest';
 import AllFilms from './Components/allFilms';
+import Genres from './Components/genres';
+
 import profile from './Components/profile'; 
 import TopRatedFilms from './Components/TopRatedFilms';
 import SearchView from './Components/Search';
@@ -20,6 +22,8 @@ import Form2 from './Components/Form';
 import topRated from './Components/Dummy(topRatedFilms).json';
 import ViewWatchlist from './Components/viewWatchList';
 import ViewFilmDetails from './Components/ViewFilmDetail';
+import "react-toastify/dist/ReactToastify.css";
+import { toast, ToastContainer } from "react-toastify";
 
 import img1 from './img1.jpg';
 import img2 from './img2.jpg';
@@ -32,10 +36,30 @@ function MyApp() {
   const [searchText, setSearchText] = useState('');
   const [modalShow, setModalShow] = React.useState(0);
   const places = ['Movie1', 'Movie2', 'Movie3', 'Movie4', 'Movie5'];
-  const [user_id, setuid] = React.useState(0);
+  const [user_id, setuid] = React.useState(null);
   const [movies, setmovies] = React.useState([]);
+  const [lin, setlin]=React.useState(false);
+  const [wlist, setwlist] = React.useState([]);
+  
+  const log_data =()=> {
 
-  const fetch1 =  ()=>{
+    const rememberMe = localStorage.getItem('rememberMe');
+    
+    const user =  localStorage.getItem('user');    
+    if (rememberMe==true){
+      setuid(user)
+    }
+    setlin(true)
+  }
+  if (lin==false){
+    log_data()
+  }
+
+ console.log( localStorage.getItem('user'))
+
+  const fetch1 =()=>{
+    
+
 
     fetch('api/allfilms')
     .then (response=>  response.json())
@@ -68,17 +92,15 @@ function MyApp() {
           
           itr=0
         }
-        console.log(changes)
+        //console.log(changes)
         setmovies(changes)
         }
         )
   }
-  fetch1()
+  if(movies.length==0) fetch1();
   
-  const userLogin = (tok) => {
-    setuid(tok);
-  }
-  console.log(user_id)
+
+  
   // function imagesPrint() {
   //   const renderCard = (m, index) => {
   //     return (
@@ -100,6 +122,14 @@ function MyApp() {
   //     </Carousel>)
   //   }
   // }
+  const toast_watchlist=(t)=>{
+
+    if(t){
+    toast.success("Added to Watch List")}
+    else{
+     toast.error("Already in Watch List")
+    }
+  }
 
   function profileDeets() {
     const URLcurrent = window.location.href
@@ -114,14 +144,14 @@ function MyApp() {
   topRated.map((key, index)=> {
     // filledArray = new Array(1).fill(`${key.title}`) + filledArray;
     filledArray = filledArray + `${key.title}*`
-    console.log(filledArray)
+    //console.log(filledArray)
   })
   filledArray.split('*')
-  console.log(filledArray.split('*').slice(0, -1));
+  //console.log(filledArray.split('*').slice(0, -1));
 
   
   useEffect(() => {
-    console.log(user_id)
+   // console.log(user_id)
     if (searchText)
     {fetch(`api/search?search=${searchText}`)
       .then(response => response.json())
@@ -153,7 +183,6 @@ function MyApp() {
           
   
         }
-                
         setSearchResults(changes);
       })
     }
@@ -161,9 +190,13 @@ function MyApp() {
 
 
   return (
+    
     <div>
+         <>
+            <ToastContainer draggable={false} autoClose={2500}/>
+            </>
       <Switch>
-        <Route path="/login" component={Login}>
+        <Route path="/login" component={()=><Login />}>
         </Route>
 
         <Route path="/SignUp" component={SignUp}>
@@ -171,13 +204,17 @@ function MyApp() {
 
       <div>
       <Navbar searchText={searchText} setSearchText={setSearchText}/>
-      
+
+    
       <Route path="/" exact>
             {/* <div>
                 <button onClick={profileDeets} type='button'>
                   Profile
                 </button>
             </div> */}
+
+
+
             <div className="container h-75 w-75">
 
             <Carousel >
@@ -212,7 +249,8 @@ function MyApp() {
       
       
     </div>
-    <TopRatedFilms/>
+
+    <TopRatedFilms tost={toast_watchlist}/>
 
     <ViewWatchlist/>
     {/* <Wheel items={places} /> */}
@@ -233,7 +271,11 @@ function MyApp() {
         </Route>
       </Switch>
       <Switch>
-        <Route path="/movie/:id" component={ViewFilmDetails}>
+        <Route path="/genres" component={Genres}>
+        </Route>
+      </Switch>
+      <Switch>
+        <Route path="/movie/:id" component={ViewFilmDetails }>
         </Route>
       </Switch>
 
@@ -248,7 +290,7 @@ function MyApp() {
       </Switch>  
      
     {/* <Form/> */}
-    <Guestbar searchText={searchText} setSearchText={setSearchText}/>
+    {/* <Guestbar searchText={searchText} setSearchText={setSearchText}/> */}
 
     </div>
    

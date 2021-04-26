@@ -56,10 +56,13 @@ import StarIcon from '@material-ui/icons/Star';
 //   }
 
 
-function TopRatedFilms() {
+function TopRatedFilms({tost}) {
     const [modalShow, setModalShow] = React.useState(0);
       const [movies, setmovies] = React.useState([]);
-
+      const [wlist, setwlist] = React.useState([]);
+      const s=  localStorage.getItem('token')
+      const [gl, setgl] = React.useState([]);
+    
 const fetch1 =  ()=>{
 
   fetch('api/toprated')
@@ -98,8 +101,78 @@ const fetch1 =  ()=>{
       }
       )
 }
-fetch1()
-    const renderCard = (card, index) => {
+if(movies.length==0) fetch1();
+
+const add_to_watch_list=(film_id)=>{
+  console.log("watchlist",wlist)
+  
+if(s!=null){
+    const x=film_id.toString()
+    console.log(x)
+    a2w(x)
+    }
+
+}
+
+const a2w=(x)=>{
+
+  fetch('/api/wlist', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json',
+    "X-CSRFToken":csrftoken},
+    body: JSON.stringify({
+      user_id: id,
+      movie_id: x
+    })
+  })
+  .then( data => data.json()
+  )
+  .then(
+    data => {
+      console.log(data);
+      if(!(data.non_field_errors!=undefined)){
+     tost(true)}
+     else{
+tost(false)   
+  }
+    }
+  )
+  
+}
+
+function readCookie(name) {
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(';');
+  for(var i=0;i < ca.length;i++) {
+      var c = ca[i];
+      while (c.charAt(0)==' ') c = c.substring(1,c.length);
+      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+  }
+  return null;
+}
+
+var csrftoken = readCookie('csrftoken');
+const id=  localStorage.getItem('user')
+const token=  localStorage.getItem('token')
+const fetch_wlist=()=>{
+fetch('/api/wlist',{
+method: 'GET',
+headers: {'Content-Type': 'application/json',
+"X-CSRFToken":csrftoken}})
+  .then (response=>  response.json())
+  .then (data =>{
+     
+      setwlist(data)
+      }
+      )
+}
+
+if(token!=null&&wlist.length==0){
+
+  fetch_wlist()
+}
+
+const renderCard = (card, index) => {
     return (
 
         <Card style={{ width: '16rem', position: "relative"}} className="box2 rounded">
@@ -127,7 +200,7 @@ fetch1()
     
      </Row>
 
-     <Button  className = "addedbutton p-2 ml-2" >ADD TO WATCHLIST</Button>
+     <Button  className = "addedbutton p-2 ml-2" onClick={()=>add_to_watch_list(card.id)} >ADD TO WATCHLIST</Button>
      <VerticalModal content={card}
        show={modalShow===card.id}
        onHide={() => setModalShow(0)}

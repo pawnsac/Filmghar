@@ -94,9 +94,9 @@ const fetch1 =  ()=>{
       }
       )
 }
-fetch1()
+if(movies_all.length==0)fetch1();
 
-fetch_actors()
+if(actors.length==0)fetch_actors();
 
     const filterMovies = (id) => {
         

@@ -14,6 +14,13 @@ const FormLogin = () => {
     const [password, setPassword] = useState("");
     const [isSuccess, setIsSuccess] = useState(false);
 
+    const setid_user=(val,token)=>{
+ 
+      localStorage.setItem('rememberMe', true);
+      localStorage.setItem('user', val);
+      localStorage.setItem('token', token);
+
+  }
     var username = ""
     var temp_id=0
     function validateForm() {
@@ -77,6 +84,7 @@ const FormLogin = () => {
           }else{
             setId(temp_id)
             setIsSuccess(true)
+            setid_user(temp_id,data.token)
           }
           console.log(data);
         }

@@ -7,3 +7,7 @@ admin.site.register(Films)
 
 admin.site.register(Persons)
 
+admin.site.register(Watchlist)
+
+admin.site.register(Reviews)
+
