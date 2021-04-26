@@ -65,6 +65,7 @@ const fetch_reviews=()=>{
   .then(response => response.json())
   .then(data => {
     setreviews(data);
+    console.log(data)
   })
 
 
